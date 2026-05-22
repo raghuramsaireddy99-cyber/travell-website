@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Packages — Voyageur</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      min-height: 45vh; display: flex; align-items: flex-end;
+      padding: 5rem 4rem;
+      background: linear-gradient(135deg, #0D1B2A 0%, #0D0D0D 60%);
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero .section-label { display: block; margin-bottom: 0.5rem; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300;
+    }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 4rem; }
+    .compare-table th, .compare-table td {
+      padding: 1.1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.82rem; text-align: left;
+    }
+    .compare-table th {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); background: var(--surface);
+    }
+    .compare-table td:first-child { color: var(--text-dim); }
+    .check { color: var(--gold); font-size: 1rem; }
+    .cross { color: rgba(255,255,255,0.2); }
+    .compare-table tr:hover td { background: rgba(201,168,76,0.03); }
+    .faq { background: var(--dark); padding: 5rem 4rem; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .faq-item {
+      background: var(--surface); border: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem; cursor: pointer; transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(201,168,76,0.2); }
+    .faq-q {
+      font-size: 0.9rem; font-weight: 400; margin-bottom: 0; display: flex;
+      justify-content: space-between; align-items: center;
+    }
+    .faq-q::after { content: '+'; color: var(--gold); font-size: 1.3rem; }
+    .faq-a { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; display: none; line-height: 1.8; }
+    .faq-item.open .faq-q::after { content: '−'; }
+    .faq-item.open .faq-a { display: block; }
+    @media(max-width:768px){
+      .page-hero{padding:4rem 1.5rem;}
+      .faq{padding:4rem 1.5rem;}
+      .faq-grid{grid-template-columns:1fr;}
+      .compare-table th:not(:first-child):not(:nth-child(3)), 
+      .compare-table td:not(:first-child):not(:nth-child(3)){display:none;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Voy<span>ageur</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-label">Our Offerings</span>
+      <h1>Tour <em>Packages</em></h1>
+    </div>
+  </div>
+
+  <!-- PACKAGES -->
+  <section class="packages">
+    <div class="section-header reveal">
+      <span class="section-label">Choose Your Journey</span>
+      <h2 class="section-title">Three Tiers of <em>Excellence</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">Each package is thoughtfully curated — whether you seek adventure, comfort, or pure indulgence.</p>
+    </div>
+
+    <div class="pkg-grid">
+      <div class="pkg-card reveal">
+        <div class="pkg-icon">🌿</div>
+        <div class="pkg-name">Explorer</div>
+        <div class="pkg-duration">5 Nights · 6 Days</div>
+        <ul class="pkg-features">
+          <li>Return economy flights</li>
+          <li>3-star hotel accommodation</li>
+          <li>Daily breakfast</li>
+          <li>City guided tours (2 days)</li>
+          <li>Airport transfers</li>
+          <li>Travel insurance</li>
+        </ul>
+        <div class="pkg-price">₹35,000 <span>/ person</span></div>
+        <a href="booking.html" class="pkg-btn">Book Explorer</a>
+      </div>
+
+      <div class="pkg-card featured reveal">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-icon">✦</div>
+        <div class="pkg-name">Signature</div>
+        <div class="pkg-duration">7 Nights · 8 Days</div>
+        <ul class="pkg-features">
+          <li>Return business class flights</li>
+          <li>5-star hotel or resort</li>
+          <li>All meals included</li>
+          <li>Private guided tours</li>
+          <li>Spa day (60 min treatment)</li>
+          <li>Luxury airport transfers</li>
+          <li>24/7 concierge support</li>
+        </ul>
+        <div class="pkg-price">₹85,000 <span>/ person</span></div>
+        <a href="booking.html" class="pkg-btn">Book Signature</a>
+      </div>
+
+      <div class="pkg-card reveal">
+        <div class="pkg-icon">♛</div>
+        <div class="pkg-name">Prestige</div>
+        <div class="pkg-duration">10 Nights · 11 Days</div>
+        <ul class="pkg-features">
+          <li>Return first-class flights</li>
+          <li>Luxury villa or overwater suite</li>
+          <li>Personal butler & concierge</li>
+          <li>Private yacht excursion</li>
+          <li>Michelin-star dining (2 evenings)</li>
+          <li>Helicopter airport transfers</li>
+          <li>Exclusive cultural experiences</li>
+          <li>Complimentary upgrades</li>
+        </ul>
+        <div class="pkg-price">₹1,80,000 <span>/ person</span></div>
+        <a href="booking.html" class="pkg-btn">Book Prestige</a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="reveal" style="margin-top:5rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.5rem;">Package <em>Comparison</em></h3>
+      <div class="gold-line"></div>
+      <div style="overflow-x:auto;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Explorer</th>
+              <th>Signature</th>
+              <th>Prestige</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Flights Included</td><td>Economy</td><td>Business</td><td>First Class</td></tr>
+            <tr><td>Accommodation</td><td>3-Star</td><td>5-Star</td><td>Luxury Villa</td></tr>
+            <tr><td>Meals</td><td>Breakfast</td><td>All Meals</td><td>All + Fine Dining</td></tr>
+            <tr><td>Guided Tours</td><td><span class="check">✓</span> Group</td><td><span class="check">✓</span> Private</td><td><span class="check">✓</span> Exclusive</td></tr>
+            <tr><td>Airport Transfers</td><td><span class="check">✓</span></td><td><span class="check">✓</span> Luxury</td><td><span class="check">✓</span> Helicopter</td></tr>
+            <tr><td>Spa Treatment</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span> Daily</td></tr>
+            <tr><td>Personal Concierge</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span> Butler</td></tr>
+            <tr><td>Yacht / Helicopter</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Travel Insurance</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span> Premium</td></tr>
+            <tr>
+              <td style="font-weight:400;">Price Per Person</td>
+              <td style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.1rem;">₹35,000</td>
+              <td style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.1rem;">₹85,000</td>
+              <td style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.1rem;">₹1,80,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <div class="reveal">
+      <span class="section-label">Got Questions?</span>
+      <h2 class="section-title">Frequently <em>Asked</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <div class="faq-q">Can I customise my package?</div>
+        <div class="faq-a">Absolutely. All packages serve as a base — our specialists will tailor every detail to your preferences, from accommodation style to activity choices.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the cancellation policy?</div>
+        <div class="faq-a">We offer full refunds up to 30 days before departure, 50% refund up to 14 days, and rescheduling options up to 7 days prior.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are visas included in the package?</div>
+        <div class="faq-a">Visa assistance is included in all Signature and Prestige packages. Explorer package clients receive guidance and documentation support.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you cater for solo travellers?</div>
+        <div class="faq-a">Yes! We have dedicated solo traveller rates for all packages. We also organise small-group departures where you can meet like-minded explorers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How far in advance should I book?</div>
+        <div class="faq-a">We recommend booking at least 6–8 weeks in advance for peak season travel (October–February, June–August). Last-minute options are sometimes available.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is travel insurance mandatory?</div>
+        <div class="faq-a">Travel insurance is included in all packages. We strongly recommend not opting out, as it covers medical emergencies, trip cancellations, and lost luggage.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section style="background:var(--deep);padding:6rem 4rem;text-align:center;">
+    <div class="reveal">
+      <span class="section-label">Ready to Travel?</span>
+      <h2 class="section-title" style="margin-bottom:1.5rem;">Start Your <em>Journey Today</em></h2>
+      <div class="gold-line" style="margin:0 auto 2rem;"></div>
+      <a href="booking.html" class="btn-primary">Book Your Package →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Voy<span>ageur</span></a>
+        <p>Crafting extraordinary journeys since 2012.</p>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Voyageur Travel. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">IG</a><a href="#" class="social-link">FB</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

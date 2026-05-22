@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Journey — Voyageur</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      min-height: 40vh; display: flex; align-items: flex-end; padding: 5rem 4rem;
+      background: linear-gradient(135deg, #0D1B2A 0%, #0D0D0D 60%);
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse 50% 80% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+    }
+    .page-hero-content { position:relative; z-index:1; }
+    .booking-page { background: var(--deep); padding: 6rem 4rem; }
+    .booking-page .booking-inner { max-width: 1200px; margin: 0 auto; }
+    @media(max-width:768px){
+      .page-hero{padding:4rem 1.5rem;}
+      .booking-page{padding:4rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Voy<span>ageur</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#destinations">Destinations</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-label">Your Journey Awaits</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;">Book Your <em>Adventure</em></h1>
+    </div>
+  </div>
+
+  <section class="booking-page">
+    <div class="booking-inner">
+      <div class="booking" style="padding:0;background:none;">
+        <div class="booking-inner">
+          <div class="booking-info reveal">
+            <span class="section-label">Get Started</span>
+            <h2 class="section-title">Tell Us About<br><em>Your Dream Trip</em></h2>
+            <div class="gold-line"></div>
+            <p class="section-desc">Complete the form and one of our travel specialists will reach out within 24 hours with a personalised itinerary and quote.</p>
+            <div class="booking-steps">
+              <div class="step-item">
+                <div class="step-num">01</div>
+                <div>
+                  <div class="step-title">Fill the Form</div>
+                  <div class="step-desc">Share your destination preferences, travel dates and group size.</div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">02</div>
+                <div>
+                  <div class="step-title">Receive Your Proposal</div>
+                  <div class="step-desc">We craft a tailored itinerary and send it to your email.</div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">03</div>
+                <div>
+                  <div class="step-title">Confirm & Pack</div>
+                  <div class="step-desc">Approve the plan, make payment and we handle the rest.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="booking-form">
+              <h3 class="form-title">Booking Request</h3>
+              <form id="bookingForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fname">Full Name</label>
+                    <input type="text" id="fname" placeholder="Your full name" />
+                    <span class="error-msg">Please enter your full name</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@email.com" />
+                    <span class="error-msg">Enter a valid email</span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+91 00000 00000" />
+                    <span class="error-msg">Enter a valid phone number</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <select id="destination">
+                      <option value="">Select destination</option>
+                      <option value="bali">Bali, Indonesia</option>
+                      <option value="paris">Paris, France</option>
+                      <option value="maldives">Maldives</option>
+                      <option value="dubai">Dubai, UAE</option>
+                      <option value="switzerland">Switzerland</option>
+                      <option value="other">Other / Suggest One</option>
+                    </select>
+                    <span class="error-msg">Please select a destination</span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="date">Travel Date</label>
+                    <input type="date" id="date" />
+                    <span class="error-msg">Please select a future date</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="travelers">Travellers</label>
+                    <select id="travelers">
+                      <option value="">Select count</option>
+                      <option value="1">1 Person</option>
+                      <option value="2">2 People</option>
+                      <option value="3-4">3–4 People</option>
+                      <option value="5+">5+ People</option>
+                    </select>
+                    <span class="error-msg">Please select number of travellers</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="package">Package Type</label>
+                  <select id="package">
+                    <option value="">Select a package</option>
+                    <option value="explorer">Explorer — ₹35,000/person</option>
+                    <option value="signature">Signature — ₹85,000/person</option>
+                    <option value="prestige">Prestige — ₹1,80,000/person</option>
+                  </select>
+                  <span class="error-msg">Please select a package</span>
+                </div>
+                <div class="form-group">
+                  <label for="notes">Special Requests (Optional)</label>
+                  <textarea id="notes" placeholder="Dietary requirements, accessibility needs, room preferences…"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit Booking Request →</button>
+              </form>
+              <div class="form-success">
+                <div class="success-icon">✦</div>
+                <h3>Booking Received!</h3>
+                <p>Thank you for choosing Voyageur. Our specialist will contact you within 24 hours with your personalised itinerary.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Voy<span>ageur</span></a>
+        <p>Crafting extraordinary journeys since 2012.</p>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Voyageur Travel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

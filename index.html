@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyageur — Luxury Travel Experiences</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Voy<span>ageur</span></a>
+    <ul class="nav-links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <div class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Curated Luxury Travel</p>
+      <h1 class="hero-title">
+        Discover the<br><em>World's Hidden</em><br>Wonders
+      </h1>
+      <p class="hero-subtitle">
+        Bespoke journeys crafted for the discerning traveller. Where every detail is considered and every moment is extraordinary.
+      </p>
+      <div class="hero-actions">
+        <a href="#destinations" class="btn-primary">Explore Destinations</a>
+        <a href="packages.html" class="btn-outline">View Packages</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num" data-target="240" data-suffix="+">0+</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="18" data-suffix="K+">0K+</div>
+        <div class="stat-label">Travellers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="12" data-suffix=" Yrs">0 Yrs</div>
+        <div class="stat-label">Experience</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ DESTINATIONS ══════════════════════════════════════════ -->
+  <section class="destinations" id="destinations">
+    <div class="section-header reveal">
+      <span class="section-label">Where To Go</span>
+      <h2 class="section-title">Iconic<br><em>Destinations</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">From ancient temples to pristine coastlines, we take you where memories are made.</p>
+    </div>
+
+    <div class="dest-grid">
+      <!-- Large card -->
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80" alt="Bali" />
+        <div class="dest-overlay">
+          <div class="dest-tag">Indonesia</div>
+          <div class="dest-name">Bali</div>
+          <div class="dest-detail">Island of the Gods</div>
+        </div>
+        <div class="dest-hover-info">
+          <div class="price">₹45,000</div>
+          <div class="price-label">per person / 7 nights</div>
+          <a href="#booking" class="explore-btn">Book This Trip</a>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris" />
+        <div class="dest-overlay">
+          <div class="dest-tag">France</div>
+          <div class="dest-name">Paris</div>
+          <div class="dest-detail">City of Light</div>
+        </div>
+        <div class="dest-hover-info">
+          <div class="price">₹92,000</div>
+          <div class="price-label">per person / 6 nights</div>
+          <a href="#booking" class="explore-btn">Book This Trip</a>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&q=80" alt="Maldives" />
+        <div class="dest-overlay">
+          <div class="dest-tag">Indian Ocean</div>
+          <div class="dest-name">Maldives</div>
+          <div class="dest-detail">Overwater Paradise</div>
+        </div>
+        <div class="dest-hover-info">
+          <div class="price">₹1,20,000</div>
+          <div class="price-label">per person / 5 nights</div>
+          <a href="#booking" class="explore-btn">Book This Trip</a>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai" />
+        <div class="dest-overlay">
+          <div class="dest-tag">UAE</div>
+          <div class="dest-name">Dubai</div>
+          <div class="dest-detail">City of Future</div>
+        </div>
+        <div class="dest-hover-info">
+          <div class="price">₹65,000</div>
+          <div class="price-label">per person / 5 nights</div>
+          <a href="#booking" class="explore-btn">Book This Trip</a>
+        </div>
+      </div>
+
+      <div class="dest-card reveal">
+        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80" alt="Switzerland" />
+        <div class="dest-overlay">
+          <div class="dest-tag">Europe</div>
+          <div class="dest-name">Switzerland</div>
+          <div class="dest-detail">Alpine Splendour</div>
+        </div>
+        <div class="dest-hover-info">
+          <div class="price">₹1,10,000</div>
+          <div class="price-label">per person / 8 nights</div>
+          <a href="#booking" class="explore-btn">Book This Trip</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PACKAGES ══════════════════════════════════════════════ -->
+  <section class="packages" id="packages">
+    <div class="section-header reveal">
+      <span class="section-label">Tailored For You</span>
+      <h2 class="section-title">Tour <em>Packages</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-desc">Three distinct experiences — each crafted with care for every kind of explorer.</p>
+    </div>
+
+    <div class="pkg-grid">
+      <div class="pkg-card reveal">
+        <div class="pkg-icon">🌿</div>
+        <div class="pkg-name">Explorer</div>
+        <div class="pkg-duration">5 Nights · 6 Days</div>
+        <ul class="pkg-features">
+          <li>Return flights included</li>
+          <li>3-star hotel accommodation</li>
+          <li>Daily breakfast</li>
+          <li>City guided tours</li>
+          <li>Airport transfers</li>
+        </ul>
+        <div class="pkg-price">₹35,000 <span>/ person</span></div>
+        <a href="booking.html" class="pkg-btn">Book Explorer</a>
+      </div>
+
+      <div class="pkg-card featured reveal">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-icon">✦</div>
+        <div class="pkg-name">Signature</div>
+        <div class="pkg-duration">7 Nights · 8 Days</div>
+        <ul class="pkg-features">
+          <li>Business class flights</li>
+          <li>5-star hotel & resort</li>
+          <li>All meals included</li>
+          <li>Private guided tours</li>
+          <li>Spa day experience</li>
+          <li>Luxury transfers</li>
+        </ul>
+        <div class="pkg-price">₹85,000 <span>/ person</span></div>
+        <a href="booking.html" class="pkg-btn">Book Signature</a>
+      </div>
+
+      <div class="pkg-card reveal">
+        <div class="pkg-icon">♛</div>
+        <div class="pkg-name">Prestige</div>
+        <div class="pkg-duration">10 Nights · 11 Days</div>
+        <ul class="pkg-features">
+          <li>First class flights</li>
+          <li>Luxury villa or suite</li>
+          <li>Personal concierge</li>
+          <li>Private yacht excursion</li>
+          <li>Michelin dining</li>
+          <li>Helicopter transfers</li>
+        </ul>
+        <div class="pkg-price">₹1,80,000 <span>/ person</span></div>
+        <a href="booking.html" class="pkg-btn">Book Prestige</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BOOKING FORM ═══════════════════════════════════════════ -->
+  <section class="booking" id="booking">
+    <div class="booking-inner">
+      <div class="booking-info reveal">
+        <span class="section-label">Reserve Your Journey</span>
+        <h2 class="section-title">Begin Your <em>Adventure</em></h2>
+        <div class="gold-line"></div>
+        <p class="section-desc">Our travel specialists will craft your perfect itinerary once you fill out the form.</p>
+
+        <div class="booking-steps">
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div>
+              <div class="step-title">Submit Your Request</div>
+              <div class="step-desc">Fill in your travel preferences and dates.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div>
+              <div class="step-title">Receive Your Quote</div>
+              <div class="step-desc">We'll send a personalised itinerary within 24 hours.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div>
+              <div class="step-title">Confirm & Travel</div>
+              <div class="step-desc">Secure your booking and prepare for your dream journey.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="booking-form">
+          <h3 class="form-title">Request a Booking</h3>
+          <form id="bookingForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" placeholder="Your full name" />
+                <span class="error-msg">Please enter your full name</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@email.com" />
+                <span class="error-msg">Enter a valid email</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+91 00000 00000" />
+                <span class="error-msg">Enter a valid phone number</span>
+              </div>
+              <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination">
+                  <option value="">Select destination</option>
+                  <option value="bali">Bali, Indonesia</option>
+                  <option value="paris">Paris, France</option>
+                  <option value="maldives">Maldives</option>
+                  <option value="dubai">Dubai, UAE</option>
+                  <option value="switzerland">Switzerland</option>
+                  <option value="other">Other / Suggest One</option>
+                </select>
+                <span class="error-msg">Please select a destination</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Travel Date</label>
+                <input type="date" id="date" />
+                <span class="error-msg">Please select a future date</span>
+              </div>
+              <div class="form-group">
+                <label for="travelers">Travellers</label>
+                <select id="travelers">
+                  <option value="">Select count</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3-4">3–4 People</option>
+                  <option value="5+">5+ People</option>
+                </select>
+                <span class="error-msg">Please select number of travellers</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="package">Package Type</label>
+              <select id="package">
+                <option value="">Select a package</option>
+                <option value="explorer">Explorer — ₹35,000/person</option>
+                <option value="signature">Signature — ₹85,000/person</option>
+                <option value="prestige">Prestige — ₹1,80,000/person</option>
+              </select>
+              <span class="error-msg">Please select a package</span>
+            </div>
+            <div class="form-group">
+              <label for="notes">Special Requests (Optional)</label>
+              <textarea id="notes" placeholder="Dietary requirements, accessibility needs, room preferences…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Request My Booking →</button>
+          </form>
+
+          <div class="form-success">
+            <div class="success-icon">✦</div>
+            <h3>Booking Received!</h3>
+            <p>Thank you for choosing Voyageur. Our specialist will contact you within 24 hours with your personalised itinerary.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ════════════════════════════════════════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="section-header reveal">
+      <span class="section-label">In The Moment</span>
+      <h2 class="section-title">Travel <em>Gallery</em></h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=900&q=80" alt="Travel" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=500&q=80" alt="Beach" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&q=80" alt="Mountain" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=80" alt="Resort" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=500&q=80" alt="Maldives" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon">+</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header reveal">
+      <span class="section-label">What Travellers Say</span>
+      <h2 class="section-title">Real <em>Experiences</em></h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="testi-slider reveal">
+      <div class="testi-track">
+        <div class="testi-card">
+          <div class="testi-avatar">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya S." />
+          </div>
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Voyageur turned our honeymoon into something straight out of a film. Every single detail — from the overwater villa to the private dinner on the beach — was flawless. We are already planning our anniversary trip."</p>
+            <div class="testi-author">Priya & Arjun S. <span>— Maldives Prestige Package</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-avatar">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul M." />
+          </div>
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"The Bali Signature package was worth every rupee. Our personal guide knew every hidden temple and secret warung. I have travelled a lot, but this was a different level of experience entirely."</p>
+            <div class="testi-author">Rahul M. <span>— Bali Signature Package</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-avatar">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sneha K." />
+          </div>
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"I was sceptical at first, but the team made our family trip to Switzerland seamless. Four kids, two grandparents, zero stress. The alpine train journeys alone made it unforgettable."</p>
+            <div class="testi-author">Sneha K. <span>— Switzerland Explorer Package</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; margin-top:2rem;">
+        <div class="testi-controls">
+          <button class="testi-btn testi-prev" aria-label="Previous">&#8592;</button>
+          <button class="testi-btn testi-next" aria-label="Next">&#8594;</button>
+        </div>
+        <div class="testi-dots">
+          <button class="testi-dot active"></button>
+          <button class="testi-dot"></button>
+          <button class="testi-dot"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Voy<span>ageur</span></a>
+        <p>Crafting extraordinary journeys for the discerning traveller since 2012. Your world, reimagined.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="#">Bali, Indonesia</a></li>
+          <li><a href="#">Paris, France</a></li>
+          <li><a href="#">Maldives</a></li>
+          <li><a href="#">Dubai, UAE</a></li>
+          <li><a href="#">Switzerland</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Packages</h4>
+        <ul>
+          <li><a href="packages.html">Explorer</a></li>
+          <li><a href="packages.html">Signature</a></li>
+          <li><a href="packages.html">Prestige</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Travel Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Voyageur Travel. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+        <a href="#" class="social-link" aria-label="Facebook">FB</a>
+        <a href="#" class="social-link" aria-label="Twitter">TW</a>
+        <a href="#" class="social-link" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

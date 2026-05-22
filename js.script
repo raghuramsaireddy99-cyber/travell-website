@@ -1,0 +1,179 @@
+/* ─── NAVBAR SCROLL ──────────────────────────────────────────── */
+const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+hamburger?.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  const spans = hamburger.querySelectorAll('span');
+  if (navLinks.classList.contains('open')) {
+    spans[0].style.cssText = 'transform:rotate(45deg) translate(4px,4px)';
+    spans[1].style.cssText = 'opacity:0';
+    spans[2].style.cssText = 'transform:rotate(-45deg) translate(4px,-4px)';
+  } else {
+    spans.forEach(s => s.style.cssText = '');
+  }
+});
+
+navLinks?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger?.querySelectorAll('span').forEach(s => s.style.cssText = '');
+  });
+});
+
+/* ─── SCROLL REVEAL ──────────────────────────────────────────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ─── TESTIMONIAL SLIDER ─────────────────────────────────────── */
+const track = document.querySelector('.testi-track');
+const cards = document.querySelectorAll('.testi-card');
+const dots  = document.querySelectorAll('.testi-dot');
+let current = 0;
+let autoSlide;
+
+function goTo(idx) {
+  current = (idx + cards.length) % cards.length;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+document.querySelector('.testi-prev')?.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+document.querySelector('.testi-next')?.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); resetAuto(); }));
+
+function resetAuto() { clearInterval(autoSlide); autoSlide = setInterval(() => goTo(current + 1), 5000); }
+if (track) { goTo(0); resetAuto(); }
+
+/* ─── BOOKING FORM VALIDATION ────────────────────────────────── */
+const form = document.getElementById('bookingForm');
+
+function showError(input, msg) {
+  input.classList.add('error');
+  const err = input.nextElementSibling;
+  if (err?.classList.contains('error-msg')) {
+    err.textContent = msg;
+    err.classList.add('show');
+  }
+}
+function clearError(input) {
+  input.classList.remove('error');
+  const err = input.nextElementSibling;
+  if (err?.classList.contains('error-msg')) err.classList.remove('show');
+}
+
+function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+function validatePhone(phone) { return /^[\d\s\-\+\(\)]{7,15}$/.test(phone); }
+
+form?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  const fields = {
+    fname:       { el: form.querySelector('#fname'),       check: v => v.trim().length >= 2,  msg: 'Please enter your full name' },
+    email:       { el: form.querySelector('#email'),       check: validateEmail,               msg: 'Please enter a valid email address' },
+    phone:       { el: form.querySelector('#phone'),       check: validatePhone,               msg: 'Please enter a valid phone number' },
+    destination: { el: form.querySelector('#destination'), check: v => v !== '',               msg: 'Please select a destination' },
+    date:        { el: form.querySelector('#date'),        check: v => { const d = new Date(v); return !isNaN(d) && d > new Date(); }, msg: 'Please select a future travel date' },
+    travelers:   { el: form.querySelector('#travelers'),   check: v => v !== '',               msg: 'Please select number of travelers' },
+    package:     { el: form.querySelector('#package'),     check: v => v !== '',               msg: 'Please select a package' },
+  };
+
+  Object.values(fields).forEach(({ el, check, msg }) => {
+    if (!el) return;
+    clearError(el);
+    if (!check(el.value)) { showError(el, msg); valid = false; }
+  });
+
+  if (valid) {
+    form.style.opacity = '0';
+    form.style.transition = 'opacity 0.4s';
+    setTimeout(() => {
+      form.style.display = 'none';
+      const success = document.querySelector('.form-success');
+      if (success) {
+        success.style.display = 'block';
+        success.style.opacity = '0';
+        success.style.transition = 'opacity 0.5s';
+        setTimeout(() => success.style.opacity = '1', 50);
+      }
+    }, 400);
+  }
+});
+
+// Live clear errors
+form?.querySelectorAll('input, select, textarea').forEach(el => {
+  el.addEventListener('input', () => clearError(el));
+  el.addEventListener('change', () => clearError(el));
+});
+
+/* ─── PACKAGE CARDS — BOOK NOW ───────────────────────────────── */
+document.querySelectorAll('.pkg-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const pkgName = this.closest('.pkg-card').querySelector('.pkg-name')?.textContent;
+    const pkgSelect = document.querySelector('#package');
+    if (pkgSelect && pkgName) {
+      [...pkgSelect.options].forEach(opt => {
+        if (opt.text.toLowerCase().includes(pkgName.toLowerCase().split(' ')[0])) {
+          pkgSelect.value = opt.value;
+        }
+      });
+    }
+    const bookingSection = document.querySelector('#booking');
+    bookingSection?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* ─── DESTINATION CARDS — BOOK NOW ──────────────────────────── */
+document.querySelectorAll('.dest-card').forEach(card => {
+  card.querySelector('.explore-btn')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    const destName = card.querySelector('.dest-name')?.textContent;
+    const destSelect = document.querySelector('#destination');
+    if (destSelect && destName) {
+      [...destSelect.options].forEach(opt => {
+        if (opt.text.toLowerCase().includes(destName.toLowerCase().split(' ')[0])) {
+          destSelect.value = opt.value;
+        }
+      });
+    }
+    document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* ─── COUNTER ANIMATION ──────────────────────────────────────── */
+function animateCounter(el, target, duration = 1800) {
+  let start = 0;
+  const step = () => {
+    start += Math.ceil(target / (duration / 16));
+    if (start >= target) { el.textContent = target + (el.dataset.suffix || ''); return; }
+    el.textContent = start + (el.dataset.suffix || '');
+    requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.counted) {
+      entry.target.dataset.counted = 'true';
+      const target = parseInt(entry.target.dataset.target);
+      animateCounter(entry.target, target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
